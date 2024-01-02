@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="https://drive.google.com/uc?export=view&id=1wAy7j2uB-QI6Mkg8iDYlUnjCYAXCGk_j">
+<title>Patrick Star</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    color: #333;
+    padding-top: 120px;
+    text-align: center;
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: maroon;
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  .section {
+    margin-top: 50px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h2 {
+    color: maroon;
+    margin-bottom: 20px;
+  }
+  .customform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  select {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 300px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  .submit-form {
+    padding: 12px 24px;
+    font-size: 18px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: maroon;
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  .submit-form:hover {
+    background-color: #8b0000;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="navbar">ELEKTRONIKA PATRICK STAR</div>
+
+<section class="section" id="create-account">
+  <h2>Isi Dengan Transaksi Terkait</h2>
+  <form action="./transaksi-aksi-simpan.php" class="customform" method="POST">                 
+    <input name="kode_plg" class="required" placeholder="Masukkan Kode Pelanggan" title="Kode Pelanggan" type="text" required/>
+    <input name="status" type="hidden" value="ok"/>
+   
+    <input name="kode_brg" class="required" placeholder="Masukkan Kode Barang" title="Kode Barang" type="text" required/>
+
+    <input name="jumlah_beli" class="required" placeholder="Masukkan Jumlah Beli" title="Jumlah Beli" type="text" required/>
+    
+    <button class="submit-form" type="submit">Tambah Transaksi</button>
+  </form>
+</section>
+<!-- footer -->
+<footer class="footer">
+  <div class="footer-text">
+      <p>Copyright &copy; 2023 by Caca E | All Rights Reserved.</p>
+  </div>
+ 
+</footer>
+</body>
+</html>
