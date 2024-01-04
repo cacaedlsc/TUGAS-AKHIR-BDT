@@ -118,7 +118,7 @@
 <div class="content">
     <h1 class="dashboard">Data Transaksi</h1>
     <?php 
-    include 'koneksi.php';
+    include './../koneksi.php';
     $searchKeyword = "";
     if(isset($_GET['search']) && !empty($_GET['search'])) {
         $searchKeyword = $_GET['search'];
@@ -163,7 +163,8 @@
         </tbody>
     </table>
 
-    <a href="transaksi-buat-akun.html" class="btn add-button">Tambah Transaksi</a>
+    <!-- <a href="transaksi-buat-akun.html" class="btn add-button">Tambah Transaksi</a> -->
+    <a href="./../home.html" class="btn add-button">Dashboard</a>
 </div>
 <!-- footer -->
 <footer class="footer">

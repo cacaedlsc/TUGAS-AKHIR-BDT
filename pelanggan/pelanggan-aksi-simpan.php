@@ -1,5 +1,5 @@
 <?php
-include "koneksi.php";
+include "./../koneksi.php";
 
 // Ambil data dari form
 $kode_plg = $_POST['kode_plg'];

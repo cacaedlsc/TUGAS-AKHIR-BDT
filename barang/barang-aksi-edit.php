@@ -1,5 +1,5 @@
 <?php
-include "koneksi.php";
+include "./../koneksi.php";
 
 $id_barang = $_POST['id_barang'];
 $kode_brg = $_POST['kode_brg'];
