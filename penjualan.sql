@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 02, 2024 at 09:39 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Waktu pembuatan: 06 Jan 2024 pada 20.55
+-- Versi server: 10.4.32-MariaDB-log
+-- Versi PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `barang`
+-- Struktur dari tabel `barang`
 --
 
 CREATE TABLE `barang` (
@@ -35,69 +35,59 @@ CREATE TABLE `barang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `barang`
+-- Dumping data untuk tabel `barang`
 --
 
 INSERT INTO `barang` (`id_barang`, `kode_brg`, `nama_brg`, `harga`) VALUES
-(1, 'BR001', 'Laptop ASUS', 7000000),
-(2, 'BR002', 'iPHONE PRO MAX 17', 25999000),
+(1, 'BR001', 'Laptop', 7000000),
+(2, 'BR002', 'HP', 1000000),
 (3, 'BR003', 'Printer', 1500000),
 (4, 'BR004', 'Changer USB', 75000),
-(5, 'BR005', 'Changer Type C', 80000),
-(8, 'BR006', 'Earphone Lenoffo', 210000);
+(10, 'BR005', 'Changer Type C', 80000),
+(11, 'BR006', 'Earphone Lenoffo', 210000),
+(12, 'BR007', 'TWS Azuzza', 321000);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `barang_harga`
+-- Stand-in struktur untuk tampilan `barang_harga`
+-- (Lihat di bawah untuk tampilan aktual)
 --
-
 CREATE TABLE `barang_harga` (
-  `kode_brg` varchar(10) NOT NULL,
-  `harga` int(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `barang_harga`
---
-
-INSERT INTO `barang_harga` (`kode_brg`, `harga`) VALUES
-('BR001', 7000000),
-('BR002', 1000000),
-('BR003', 1500000),
-('BR004', 75000),
-('BR005', 80000),
-('BR006', 210000),
-('BR007', 321000);
+`id_barang` int(11)
+,`kode_brg` varchar(10)
+,`harga` int(20)
+);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `barang_info`
+-- Stand-in struktur untuk tampilan `barang_info`
+-- (Lihat di bawah untuk tampilan aktual)
 --
-
 CREATE TABLE `barang_info` (
-  `kode_brg` varchar(10) NOT NULL,
-  `nama_brg` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `barang_info`
---
-
-INSERT INTO `barang_info` (`kode_brg`, `nama_brg`) VALUES
-('BR001', 'Laptop'),
-('BR002', 'HP'),
-('BR003', 'Printer'),
-('BR004', 'Changer USB'),
-('BR005', 'Changer Type C'),
-('BR006', 'Earphone Lenoffo'),
-('BR007', 'TWS Azuzza');
+`id_barang` int(11)
+,`kode_brg` varchar(10)
+,`nama_brg` varchar(20)
+);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pelanggan`
+-- Stand-in struktur untuk tampilan `info_jumlah_atas_tiga`
+-- (Lihat di bawah untuk tampilan aktual)
+--
+CREATE TABLE `info_jumlah_atas_tiga` (
+`id_transaksi` int(11)
+,`kode_plg` varchar(15)
+,`kode_brg` varchar(10)
+,`jumlah_beli` int(20)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pelanggan`
 --
 
 CREATE TABLE `pelanggan` (
@@ -107,18 +97,17 @@ CREATE TABLE `pelanggan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `pelanggan`
+-- Dumping data untuk tabel `pelanggan`
 --
 
 INSERT INTO `pelanggan` (`id_pelanggan`, `kode_plg`, `nama_plg`) VALUES
 (1, 'LT001', 'Lintang Ayundia'),
-(3, 'LT003', 'Anastavia Vanza'),
-(5, 'LT009', 'Ita');
+(3, 'LT003', 'Anastavia Vanza Azzahra');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaksi`
+-- Struktur dari tabel `transaksi`
 --
 
 CREATE TABLE `transaksi` (
@@ -129,7 +118,7 @@ CREATE TABLE `transaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `transaksi`
+-- Dumping data untuk tabel `transaksi`
 --
 
 INSERT INTO `transaksi` (`id_transaksi`, `kode_plg`, `kode_brg`, `jumlah_beli`) VALUES
@@ -138,94 +127,102 @@ INSERT INTO `transaksi` (`id_transaksi`, `kode_plg`, `kode_brg`, `jumlah_beli`) 
 (3, 'LT001', 'BR003', 1),
 (4, 'LT001', 'BR007', 1),
 (5, 'LT002', 'BR002', 5),
-(11, 'LT011', 'BR004', 20),
-(12, 'LT012', 'BR007', 2);
+(13, 'LT002', 'BR007', 2),
+(14, 'LT004', 'BR006', 2),
+(15, 'LT005', 'BR005', 10);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaksi_atas_tiga`
+-- Stand-in struktur untuk tampilan `transaksi_pelanggan_lt001`
+-- (Lihat di bawah untuk tampilan aktual)
 --
-
-CREATE TABLE `transaksi_atas_tiga` (
-  `kode_plg` varchar(15) NOT NULL,
-  `kode_brg` varchar(10) NOT NULL,
-  `jumlah_beli` int(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `transaksi_atas_tiga`
---
-
-INSERT INTO `transaksi_atas_tiga` (`kode_plg`, `kode_brg`, `jumlah_beli`) VALUES
-('LT002', 'BR002', 5),
-('LT005', 'BR005', 10);
+CREATE TABLE `transaksi_pelanggan_lt001` (
+`id_transaksi` int(11)
+,`kode_plg` varchar(15)
+,`kode_brg` varchar(10)
+,`jumlah_beli` int(20)
+);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaksi_lt001`
+-- Struktur untuk view `barang_harga`
 --
+DROP TABLE IF EXISTS `barang_harga`;
 
-CREATE TABLE `transaksi_lt001` (
-  `kode_plg` varchar(15) NOT NULL,
-  `kode_brg` varchar(10) NOT NULL,
-  `jumlah_beli` int(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `barang_harga`  AS SELECT `barang`.`id_barang` AS `id_barang`, `barang`.`kode_brg` AS `kode_brg`, `barang`.`harga` AS `harga` FROM `barang` ;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `transaksi_lt001`
+-- Struktur untuk view `barang_info`
 --
+DROP TABLE IF EXISTS `barang_info`;
 
-INSERT INTO `transaksi_lt001` (`kode_plg`, `kode_brg`, `jumlah_beli`) VALUES
-('LT001', 'BR001', 2),
-('LT001', 'BR002', 3),
-('LT001', 'BR003', 1),
-('LT001', 'BR007', 1);
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `barang_info`  AS SELECT `barang`.`id_barang` AS `id_barang`, `barang`.`kode_brg` AS `kode_brg`, `barang`.`nama_brg` AS `nama_brg` FROM `barang` ;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur untuk view `info_jumlah_atas_tiga`
+--
+DROP TABLE IF EXISTS `info_jumlah_atas_tiga`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `info_jumlah_atas_tiga`  AS SELECT `transaksi`.`id_transaksi` AS `id_transaksi`, `transaksi`.`kode_plg` AS `kode_plg`, `transaksi`.`kode_brg` AS `kode_brg`, `transaksi`.`jumlah_beli` AS `jumlah_beli` FROM `transaksi` WHERE `transaksi`.`jumlah_beli` > 3 ;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur untuk view `transaksi_pelanggan_lt001`
+--
+DROP TABLE IF EXISTS `transaksi_pelanggan_lt001`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `transaksi_pelanggan_lt001`  AS SELECT `transaksi`.`id_transaksi` AS `id_transaksi`, `transaksi`.`kode_plg` AS `kode_plg`, `transaksi`.`kode_brg` AS `kode_brg`, `transaksi`.`jumlah_beli` AS `jumlah_beli` FROM `transaksi` WHERE `transaksi`.`kode_plg` = 'LT001' ;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `barang`
+-- Indeks untuk tabel `barang`
 --
 ALTER TABLE `barang`
   ADD PRIMARY KEY (`id_barang`);
 
 --
--- Indexes for table `pelanggan`
+-- Indeks untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
   ADD PRIMARY KEY (`id_pelanggan`);
 
 --
--- Indexes for table `transaksi`
+-- Indeks untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`id_transaksi`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `barang`
+-- AUTO_INCREMENT untuk tabel `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `pelanggan`
+-- AUTO_INCREMENT untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
   MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `transaksi`
+-- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
