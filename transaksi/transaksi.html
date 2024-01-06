@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="https://drive.google.com/uc?export=view&id=1wAy7j2uB-QI6Mkg8iDYlUnjCYAXCGk_j">
+<title>Patrick Star</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    color: #333;
+    padding-top: 120px; /* Adjusted for the navbar height */
+    text-align: center;
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: maroon;
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  .content {
+    margin-top: 100px; /* Margin to center the dashboard */
+  }
+  .dashboard {
+    font-size: 50px;
+    color: #A73121;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  .welcome-message {
+    font-size: 28px;
+    margin-top: 20px;
+    color: maroon;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  .button-container {
+    margin-top: 60px;
+  }
+  .btn {
+    padding: 12px 24px;
+    font-size: 20px;
+    margin: 0 15px;
+    border: 2px solid maroon;
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: maroon;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  .btn:hover {
+    background-color: #8b0000;
+  }
+  .footer {
+    width: 100%;
+    background-color: rgba(128, 0, 0, 0.8);;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+  }
+
+  .footer-text {
+    float: left;
+    margin-left: 20px;
+  }
+
+  .footer-iconTop {
+    float: right;
+  }
+</style>
+</head>
+<body>
+
+<div class="navbar">ELEKTRONIKA PATRICK STAR</div>
+
+<div class="content">
+  <div class="dashboard">Selamat Beraktivitas!</div>
+  <div class="welcome-message">Apa yang akan Anda lakukan hari ini?</div>
+
+  <div class="button-container">
+    <a href="transaksi-tampil-data.php" class="btn">DATA LENGKAP TRANSAKSI</a>
+    <br><br><br><br>
+    <a href="./../view/transaksi-jumlah-beli-lebih-dari-3.php" class="btn">VIEW TRANSAKSI JUMLAH BELI > 3</a>
+    <a href="./../view/transaksi-pelanggan-lt001.php" class="btn">VIEW TRANSAKSI PELANGGAN LT001</a>
+  </div>
+</div>
+<!-- footer -->
+<footer class="footer">
+  <div class="footer-text">
+      <p>Copyright &copy; 2023 by Caca E | All Rights Reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
