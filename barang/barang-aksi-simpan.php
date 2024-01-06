@@ -21,7 +21,7 @@ $sql = "INSERT INTO barang (kode_brg, nama_brg, harga)
         VALUES ('$kode_brg', '$nama_brg', '$harga')";
 
 if(mysqli_query($link, $sql)){
-    echo "<script>alert('Data Berhasil Disimpan!'); window.location.href='home.html';</script>";
+    echo "<script>alert('Data Berhasil Disimpan!'); window.location.href='./../home.html';</script>";
 } else {
     echo "<script>alert('Gagal menyimpan data!'); window.location.href='barang-buat-akun.html';</script>";
 }
