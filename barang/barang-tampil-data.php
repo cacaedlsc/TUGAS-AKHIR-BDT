@@ -61,12 +61,22 @@
         .btn:hover {
             background-color: #8b0000;
         }
-        .add-button {
+        .back-dashboard-button {
             float: left;
             margin-top: 35px;
             margin-right: 50px;
             margin-bottom:100px;
             background-color: #5F8670; 
+            border: #5F8670;
+            
+        }
+
+        .add-button {
+            float: right;
+            margin-top: 35px;
+            margin-right: 20px;
+            margin-bottom:100px;
+            background-color: #E36414; 
             border: #5F8670;
             
         }
@@ -162,9 +172,10 @@
         <?php } ?>
         </tbody>
     </table>
+    <a href="./../home.html" class="btn back-dashboard-button">Dashboard</a>
+    <a href="barang-buat-akun.html" class="btn add-button">Tambah Transaksi</a>
+    
 
-    <!--<a href="barang-buat-akun.html" class="btn add-button">Tambah Barang</a>-->
-    <a href="./../home.html" class="btn add-button">Dashboard</a>
 </div>
 <!-- footer -->
 <footer class="footer">
