@@ -173,7 +173,7 @@
         </tbody>
     </table>
     <a href="./../home.html" class="btn back-dashboard-button">Dashboard</a>
-    <a href="barang-buat-akun.html" class="btn add-button">Tambah Transaksi</a>
+    <a href="barang-buat-akun.html" class="btn add-button">Create Transaksi</a>
     
 
 </div>

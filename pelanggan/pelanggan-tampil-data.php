@@ -62,13 +62,21 @@
             background-color: #8b0000;
         }
         .add-button {
+            float: right;
+            margin-top: 35px;
+            margin-right: 20px;
+            margin-bottom:100px;
+            background-color: #E36414; 
+            border: #5F8670;  
+        }
+
+        .back-dashboard-button {
             float: left;
             margin-top: 35px;
             margin-right: 50px;
             margin-bottom:100px;
             background-color: #5F8670; 
-            border: #5F8670;
-            
+            border: #5F8670;  
         }
 
         .search-container {
@@ -160,9 +168,8 @@
         <?php } ?>
         </tbody>
     </table>
-
-    <!--<a href="pelanggan-buat-akun.html" class="btn add-button">Tambah Pelanggan</a>-->
-    <a href="./../home.html" class="btn add-button">Dashboard</a>
+    <a href="./../home.html" class="btn back-dashboard-button">Dashboard</a>
+    <a href="pelanggan-buat-akun.html" class="btn add-button">Create Pelanggan</a>
 </div>
 <!-- footer -->
 <footer class="footer">
